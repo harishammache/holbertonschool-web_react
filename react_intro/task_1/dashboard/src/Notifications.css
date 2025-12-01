@@ -1,14 +1,10 @@
 .notification-items {
-    border: 1px solid #e1354b;
-  background-color: #fff8f8;
-  padding: 10px;  
-  margin: 10px 0;        
-  border-radius: 5px;  
-  font-size: 14px;  
-  color: #000;
+  border: 2px dashed #e1003c;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .notification-items p {
-    margin: 0;
-    font-weight: bold;
+  margin: 0;
+  font-size: 1rem;
 }

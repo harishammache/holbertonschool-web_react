@@ -1,5 +1,3 @@
-# React intro
-
 ## Resources
 
 **Read or watch**:
@@ -48,15 +46,15 @@ You will need a **_favicon_**, the **_Holberton logo_**, and a **_close button i
 
 **holberton-logo.jpg**
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/11/175b85183ecedb529e14.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0a3ff974327653c1c0701c91f444b9100126fd77f0e7a6bbea8747b412d7e95d)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/11/175b85183ecedb529e14.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=b6e4c08213806a48cf85010580b673d3ddf9f0cd96a51ea914200d359b1b7181)
 
 **favicon.ico**
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/misc/2019/11/e240f8157634d33a9757.ico?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ad5aac50199bb15090b9eeac1640d872bc10852f06bac3c79de42669f205c5df)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/misc/2019/11/e240f8157634d33a9757.ico?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d2d880a7225c9903a884cbb121ee1b2efcf2be06b85738a19a02264141139c6e)
 
 **close-button.png**
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/2d96723b038e2e92001b59f72c0418a8595802aa.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a4018c666c80adadf2a402d0e9803a70aae63dd7bf8bae87cbb5a591681dc3c7)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/2d96723b038e2e92001b59f72c0418a8595802aa.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f018c58bcb1f7fd77dad9faf2afba770dc8eb093d7c9c75c8c709e0a076f3c8f)
 
 **Remove the following unused files:**
 
@@ -124,7 +122,7 @@ Set up the following files in the project root folder:
 
 **Ad the CSS styles to the `App.css` to match the design in the screenshot below:**
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/d3aca29c0fa33276ffa9de0d8611cd331511997b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=3b10b22ea6ba410ed6ae95ad57d6b66a1d64e67a84c4acae88dd9c5d8c80b383)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/d3aca29c0fa33276ffa9de0d8611cd331511997b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=04d6432c9338f767f82160b584e854a4db6fef105714536f586ac836ff07d048)
 
 **Requirements:**
 
@@ -180,7 +178,7 @@ Now that all dependencies are imported, let’s write the first tests:
 
   
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/4fb11d71985c3e9053301f38f4da71ff5de34649.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a6568b4c30241b0642c44d8ad60784f5c3ec1a876a13bc1db063b229a140be32)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/4fb11d71985c3e9053301f38f4da71ff5de34649.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f7f95148568147a43175ee06b8409eeb677cb0f4bd7c7741212f39e16bdea217)
 
   
 
@@ -249,9 +247,9 @@ Update the `App.spec.js` file to add the following tests:
     *   The list should contain the following items:
         *   First item: Default priority with the text `New course available`
         *   Second item: Urgent priority with the text `New resume available`
-        *   Last item: Display the text returned by `getLatestNotification` using `dangerouslySetInnerHTML`.
+        *   Last item: Urgent priority displays the text returned by `getLatestNotification` using `dangerouslySetInnerHTML`.
 *   Add a data attribute for priority:
-    *   Assign a priority level to the first and second list items using a `data-priority` attribute.
+    *   Assign a priority level to the 3 notifications items using a `data-priority` attribute as described above
 
 **In `task_2/dashboard/src/Notifications.css`:**
 
@@ -262,7 +260,7 @@ Update the `App.spec.js` file to add the following tests:
 *   No lint errors should show up
 *   Your app should look like the following screenshot:
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/676bb04908adbf59c1f5269243eac55aa4841ee1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=64d16e52d53034c9dc4aa54c5fbc451d1e11f1d7f52f85ef24154b4ad4996e0a)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/676bb04908adbf59c1f5269243eac55aa4841ee1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9660760696e7e09cf4056ff96430e1b63418a51464647310539e2afd7337cde1)
 
   
 
@@ -309,7 +307,7 @@ Add the link to your deployed web page within a new file in the `task_4/dashboar
       
     
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/e9eda297e77bfc0bde1f5252f2e778df55fef2c8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a5eb3fc69b67805a94019e225489b1c1af5e32af19ca8ccf62fb437f32558fd6)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/e9eda297e77bfc0bde1f5252f2e778df55fef2c8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f47debf04348f9f402cad823163a2fb31e2e89deda5e40166db3b808cd910484)
 
   
 
@@ -337,4 +335,4 @@ Let’s restructure the project:
 **Screenshot at this level:**  
   
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/b03d7cb2ddc658c92838f7bfe1b9982ba4976032.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251010%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251010T130839Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e4dac772cbf867069c79e9cce944598b1a3666d4e0fc484045a528d0a4936c49)
+![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/9/b03d7cb2ddc658c92838f7bfe1b9982ba4976032.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20251201%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20251201T135037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9d3393bf814f0106851b8f8f2448ca7176757d518483e7ff9436654e18f08964)

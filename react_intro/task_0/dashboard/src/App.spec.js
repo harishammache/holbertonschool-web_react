@@ -1,23 +1,34 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App.jsx";
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-test('affiche le titre h1 "School dashboard"', () => {
+describe('App Component', () => {
+  test('renders h1 element with text "School dashboard"', () => {
     render(<App />);
-    const title = screen.getByRole('heading', { name: /school dashboard/i });
-    expect(title).toBeInTheDocument();
-});
+    const h1Element = screen.getByRole('heading', { 
+      level: 1, 
+      name: /school dashboard/i 
+    });
+    expect(h1Element).toBeInTheDocument();
+  });
 
-test('affiche le texte p dans le body et footer', () => {
+  test('renders paragraph with login text in App-body', () => {
     render(<App />);
-    const bodyText = screen.getByText(/login to access the full dashboard/i);
-    expect(bodyText).toBeInTheDocument();
+    const loginText = screen.getByText(/login to access the full dashboard/i);
+    expect(loginText).toBeInTheDocument();
+  });
 
-    const footerText = screen.getByText(/Copyright 2025 - holberton School/i)
-    expect(footerText).toBeInTheDocument();
-});
-
-test('affiche une img element', () => {
+  test('renders paragraph with copyright text in App-footer', () => {
     render(<App />);
-    const img = screen.getByAltText(/holberton logo/i);
-    expect(img).toBeInTheDocument();
+    const currentYear = new Date().getFullYear();
+    const copyrightText = screen.getByText(
+      new RegExp(`copyright ${currentYear} - holberton school`, 'i')
+    );
+    expect(copyrightText).toBeInTheDocument();
+  });
+
+  test('renders img element with alt text "holberton logo"', () => {
+    render(<App />);
+    const imgElement = screen.getByAltText(/holberton logo/i);
+    expect(imgElement).toBeInTheDocument();
+  });
 });
