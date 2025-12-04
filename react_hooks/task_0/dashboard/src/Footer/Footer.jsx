@@ -1,13 +1,29 @@
-import { getCurrentYear, getFooterCopy } from '../utils/utils';
+import React, { useContext } from 'react';
+import { StyleSheet, css } from 'aphrodite';
+import newContext from '../Context/context';
 
 function Footer() {
-  return (
-    <div className="App-footer flex justify-center items-center border-t-4 border-[color:var(--main-color)] w-full mt-auto py-2">
-      <p className="italic text-xl p-1 text-center max-[520px]:text-lg max-[520px]:p-0 max-[450px]:text-[16px] max-[375px]:text-[15px]">
-        Copyright {getCurrentYear()} - {getFooterCopy(false)}
-      </p>
-    </div>
-  );
+    const { user } = useContext(newContext);
+
+    return (
+        <div className={css(styles.footer)}>
+            <p>Copyright 2024 - Holberton School</p>
+            {user?.isLoggedIn && (
+                <p>
+                    <a href="#">Contact us</a>
+                </p>
+            )}
+        </div>
+    );
 }
+
+const styles = StyleSheet.create({
+    footer: {
+        borderTop: '3px solid #e1354b',
+        padding: '1rem',
+        fontStyle: 'italic',
+        textAlign: 'center',
+    },
+});
 
 export default Footer;

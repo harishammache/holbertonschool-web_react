@@ -1,45 +1,33 @@
+// Footer.spec.js
 import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
-import { getFooterCopy, getCurrentYear } from '../utils/utils';
+import newContext from '../Context/context';
 
-describe('Footer Component', () => {
-  test('renders without crashing', () => {
+describe('Footer component', () => {
+  it('renders without crashing', () => {
     render(<Footer />);
+    expect(screen.getByText(/holberton school/i)).toBeInTheDocument();
   });
 
-  test('renders copyright text with current year and correct text when isIndex is true', () => {
-    render(<Footer />);
-    
-    const currentYear = getCurrentYear();
-    const footerText = getFooterCopy(true);
-    
-    const copyrightElement = screen.getByText(
-      new RegExp(`copyright ${currentYear} - ${footerText}`, 'i')
+  it('does not render Contact us when user is logged out', () => {
+    const ContextProvider = newContext.Provider;
+    const user = { email: '', password: '', isLoggedIn: false };
+    render(
+      <ContextProvider value={{ user }}>
+        <Footer />
+      </ContextProvider>
     );
-    
-    expect(copyrightElement).toBeInTheDocument();
-    expect(footerText).toBe('Holberton School');
+    expect(screen.queryByText(/contact us/i)).not.toBeInTheDocument();
   });
 
-  test('getFooterCopy returns correct text when isIndex is true', () => {
-    const result = getFooterCopy(true);
-    expect(result).toBe('Holberton School');
-  });
-
-  test('getFooterCopy returns correct text when isIndex is false', () => {
-    const result = getFooterCopy(false);
-    expect(result).toBe('Holberton School main dashboard');
-  });
-
-  test('displays the correct copyright text format', () => {
-    render(<Footer />);
-    
-    const currentYear = new Date().getFullYear();
-    
-    const paragraph = screen.getByText(/copyright/i);
-    expect(paragraph).toBeInTheDocument();
-    
-    expect(paragraph.textContent).toContain(currentYear.toString());
-    expect(paragraph.textContent).toMatch(/holberton school/i);
+  it('renders Contact us when user is logged in', () => {
+    const ContextProvider = newContext.Provider;
+    const user = { email: 'test@test.com', password: 'password123', isLoggedIn: true };
+    render(
+      <ContextProvider value={{ user }}>
+        <Footer />
+      </ContextProvider>
+    );
+    expect(screen.getByText(/contact us/i)).toBeInTheDocument();
   });
 });
