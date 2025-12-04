@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -31,15 +32,13 @@ class App extends React.Component {
         password: '',
         isLoggedIn: false
       },
-      notifications: notificationsList,
-      courses: coursesList
+      logOut: this.logOut
     };
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
     this.handleHideDrawer = this.handleHideDrawer.bind(this);
     this.logIn = this.logIn.bind(this);
     this.logOut = this.logOut.bind(this);
-    this.markNotificationAsRead = this.markNotificationAsRead.bind(this);
   }
 
   componentDidMount() {
@@ -85,18 +84,8 @@ class App extends React.Component {
     });
   }
 
-  markNotificationAsRead(id) {
-    console.log(`Notification ${id} has been marked as read`);
-    
-    this.setState((prevState) => ({
-      notifications: prevState.notifications.filter(
-        (notification) => notification.id !== id
-      )
-    }));
-  }
-
   render() {
-    const { displayDrawer, user, notifications, courses } = this.state;
+    const { displayDrawer, user } = this.state;
 
     const contextValue = {
       user: this.state.user,
@@ -108,11 +97,10 @@ class App extends React.Component {
         <div className="relative px-3 min-h-screen flex flex-col">
           <div className="absolute top-0 right-0 z-10">
             <Notifications
-              notifications={notifications}
+              notifications={notificationsList}
               displayDrawer={displayDrawer}
               handleDisplayDrawer={this.handleDisplayDrawer}
               handleHideDrawer={this.handleHideDrawer}
-              markNotificationAsRead={this.markNotificationAsRead}
             />
           </div>
           <div className="flex-1">
@@ -127,7 +115,7 @@ class App extends React.Component {
               </BodySectionWithMarginBottom>
             ) : (
               <BodySectionWithMarginBottom title="Course list">
-                <CourseList courses={courses} />
+                <CourseList courses={coursesList} />
               </BodySectionWithMarginBottom>
             )}
             <BodySection title="News from the School">
@@ -142,5 +130,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {};
+
+App.defaultProps = {};
 
 export default App;
