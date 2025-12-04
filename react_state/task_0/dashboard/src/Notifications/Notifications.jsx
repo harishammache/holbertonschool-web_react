@@ -11,8 +11,8 @@ class Notifications extends React.Component {
 
   shouldComponentUpdate(nextProps) {
     return (
-      nextProps.listNotifications.length > this.props.listNotifications.length ||
-      nextProps.displayDrawer !== this.props.displayDrawer
+      this.props.notifications.length !== nextProps.notifications.length ||
+      this.props.displayDrawer !== nextProps.displayDrawer
     );
   }
 
@@ -21,12 +21,19 @@ class Notifications extends React.Component {
   }
 
   render() {
-    const { displayDrawer, listNotifications, handleDisplayDrawer, handleHideDrawer } = this.props;
+    const {
+      displayDrawer = false,
+      notifications = [],
+      handleDisplayDrawer,
+      handleHideDrawer
+    } = this.props;
+
+    const shouldBounce = notifications.length > 0 && !displayDrawer;
 
     return (
       <>
-        <div 
-          className="notification-title absolute right-3 top-1 whitespace-nowrap cursor-pointer hover:opacity-80"
+        <div
+          className={`notification-title absolute right-3 top-1 whitespace-nowrap cursor-pointer ${shouldBounce ? 'animate-bounce' : ''}`}
           onClick={handleDisplayDrawer}
         >
           Your notifications
@@ -36,15 +43,13 @@ class Notifications extends React.Component {
             {notifications.length > 0 ? (
               <div className="relative">
                 <p className="m-0 max-[912px]:text-[20px]">Here is the list of notifications</p>
-                
                 <button
                   onClick={handleHideDrawer}
                   aria-label="Close"
-                  className="absolute cursor-pointer right-0 top-0 bg-transparent border-none"
+                  className="absolute cursor-pointer right-0 top-0 bg-transparent"
                 >
                   <img src={closeIcon} alt="close icon" className="w-3 h-3" />
                 </button>
-
                 <ul className="list-[square] pl-5 max-[912px]:p-0 max-[912px]:list-none">
                   {notifications.map((notification, index) => (
                     <NotificationItem
@@ -79,12 +84,16 @@ Notifications.propTypes = {
         __html: PropTypes.string
       })
     })
-  )
+  ),
+  handleDisplayDrawer: PropTypes.func,
+  handleHideDrawer: PropTypes.func
 };
 
 Notifications.defaultProps = {
   displayDrawer: false,
-  notifications: []
+  notifications: [],
+  handleDisplayDrawer: () => {},
+  handleHideDrawer: () => {}
 };
 
 export default Notifications;
