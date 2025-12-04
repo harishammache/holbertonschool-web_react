@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Notifications from './Notifications';
 
@@ -17,24 +18,24 @@ describe('Notifications Component', () => {
     expect(screen.getByText(/your notifications/i)).toBeInTheDocument();
   });
 
-  test('renders "No new notification for now" when notifications is empty and displayDrawer is true', () => {
-    render(<Notifications displayDrawer={true} notifications={[]} />);
+  test('renders "No new notification for now" when listNotifications is empty and displayDrawer is true', () => {
+    render(<Notifications displayDrawer={true} listNotifications={[]} />);
     expect(screen.getByText(/no new notification for now/i)).toBeInTheDocument();
   });
 
-  test('renders notification items when notifications array is provided and displayDrawer is true', () => {
-    render(<Notifications displayDrawer={true} notifications={sampleNotifications} />);
+  test('renders notification items when listNotifications array is provided and displayDrawer is true', () => {
+    render(<Notifications displayDrawer={true} listNotifications={sampleNotifications} />);
     expect(screen.getByText('New course available')).toBeInTheDocument();
     expect(screen.getByText('New resume available')).toBeInTheDocument();
   });
 
   test('does not render notifications list when displayDrawer is false', () => {
-    render(<Notifications displayDrawer={false} notifications={sampleNotifications} />);
+    render(<Notifications displayDrawer={false} listNotifications={sampleNotifications} />);
     expect(screen.queryByText('New course available')).not.toBeInTheDocument();
   });
 
   test('renders correct number of notification items', () => {
-    render(<Notifications displayDrawer={true} notifications={sampleNotifications} />);
+    render(<Notifications displayDrawer={true} listNotifications={sampleNotifications} />);
     const listItems = screen.getAllByRole('listitem');
     expect(listItems).toHaveLength(3);
   });
@@ -42,7 +43,7 @@ describe('Notifications Component', () => {
   test('logs correct message when notification item is clicked', () => {
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
 
-    render(<Notifications displayDrawer={true} notifications={sampleNotifications} />);
+    render(<Notifications displayDrawer={true} listNotifications={sampleNotifications} />);
 
     const firstNotification = screen.getByText('New course available');
     fireEvent.click(firstNotification);
@@ -57,7 +58,7 @@ describe('Notifications Component', () => {
     consoleSpy.mockRestore();
   });
 
-  test('does not re-render when notifications length stays the same', () => {
+  test('does not re-render when listNotifications length stays the same', () => {
     const initialNotifications = [
       { id: 1, type: 'default', value: 'First notification' },
       { id: 2, type: 'urgent', value: 'Second notification' },
@@ -71,20 +72,20 @@ describe('Notifications Component', () => {
     ];
 
     const { rerender } = render(
-      <Notifications displayDrawer={true} notifications={initialNotifications} />
+      <Notifications displayDrawer={true} listNotifications={initialNotifications} />
     );
 
     expect(screen.getByText('First notification')).toBeInTheDocument();
 
     rerender(
-      <Notifications displayDrawer={true} notifications={updatedNotifications} />
+      <Notifications displayDrawer={true} listNotifications={updatedNotifications} />
     );
 
     expect(screen.getByText('First notification')).toBeInTheDocument();
     expect(screen.queryByText('Updated first notification')).not.toBeInTheDocument();
   });
 
-  test('re-renders when notifications length changes', () => {
+  test('re-renders when listNotifications length changes', () => {
     const initialNotifications = [
       { id: 1, type: 'default', value: 'First notification' },
       { id: 2, type: 'urgent', value: 'Second notification' }
@@ -97,13 +98,13 @@ describe('Notifications Component', () => {
     ];
 
     const { rerender } = render(
-      <Notifications displayDrawer={true} notifications={initialNotifications} />
+      <Notifications displayDrawer={true} listNotifications={initialNotifications} />
     );
 
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
 
     rerender(
-      <Notifications displayDrawer={true} notifications={longerNotifications} />
+      <Notifications displayDrawer={true} listNotifications={longerNotifications} />
     );
 
     expect(screen.getAllByRole('listitem')).toHaveLength(3);
@@ -125,5 +126,4 @@ describe('Notifications Component', () => {
     fireEvent.click(closeButton);
     expect(handleHideDrawer).toHaveBeenCalled();
   });
-
 });
