@@ -125,4 +125,5 @@ describe('Notifications Component', () => {
     fireEvent.click(closeButton);
     expect(handleHideDrawer).toHaveBeenCalled();
   });
+
 });
